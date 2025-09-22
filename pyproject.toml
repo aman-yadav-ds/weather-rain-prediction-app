@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "WeatherRain-Prediction"
+version = "0.1"
+authors = [
+    { name = "Aman" }
+]
+dependencies = [
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "xgboost",
+    "Flask",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]

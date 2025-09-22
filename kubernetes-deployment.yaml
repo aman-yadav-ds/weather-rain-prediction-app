@@ -1,0 +1,34 @@
+apiVersion: app/v1
+kind: Deployment
+metadata:
+  name: weather-rain-prediction-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: weather-rain-prediction-app
+  template:
+    metadata:
+      labels:
+        app: weather-rain-prediction-app
+    spec:
+      containers:
+        - name: weather-rain-prediction-app
+          image: us-central1-docker.pkg.dev/weather-rain-prediction/weather-rain-repo/weather-rain-prediction-app:latest
+          ports:
+          - containerPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: weather-rain-prediction-service
+spec:
+  selector:
+    app: weather-rain-prediction-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
