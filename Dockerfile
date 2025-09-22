@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install --no-cache-dir -e .
+RUN pip install --no-cache-dir -e .[deploy]
 
 EXPOSE 5000
 

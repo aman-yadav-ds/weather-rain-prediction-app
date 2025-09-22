@@ -11,9 +11,15 @@ authors = [
 dependencies = [
     "pandas",
     "numpy",
+]
+
+[project.optional-dependencies]
+dev = [
     "scikit-learn",
     "xgboost",
-    "Flask",
+]
+deploy = [
+    "Flask"
 ]
 
 [tool.setuptools.packages.find]
