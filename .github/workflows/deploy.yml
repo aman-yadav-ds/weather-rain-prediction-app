@@ -32,6 +32,11 @@ jobs:
               with:
                 project_id: ${{ secrets.GCP_PROJECT_ID }}
             
+            - name: Install gke-gcloud-auth-plugin
+              run: |
+                sudo apt-get update
+                sudo apt-get install -y google-cloud-sdk-gke-gcloud-auth-plugin
+            
             - name: Train Model
               run: |
                 python3 -m pip install --upgrade pip
@@ -54,5 +59,5 @@ jobs:
             - name: Deploying to Kubernetes
               run: |
                 kubectl apply -f kubernetes-deployment.yaml
-                kubectl set image deployement/$DEPLOYMENT_NAME $DEPLOYMENT_NAME=$IMAGE:$GITHUB_SHA
+                kubectl set image deployment/$DEPLOYMENT_NAME $DEPLOYMENT_NAME=$IMAGE:$GITHUB_SHA
                 
