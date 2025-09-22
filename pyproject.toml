@@ -11,14 +11,9 @@ authors = [
 dependencies = [
     "pandas",
     "numpy",
-]
-
-[project.optional-dependencies]
-dev = [
+    "joblib",
     "scikit-learn",
     "xgboost",
-]
-deploy = [
     "Flask"
 ]
 
