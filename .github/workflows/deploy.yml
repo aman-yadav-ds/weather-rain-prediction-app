@@ -39,7 +39,7 @@ jobs:
 
             - name: Authenticate Docker to Artifact Registry
               run: |
-                google auth configure-docker us-central1-docker.pkg.dev
+                gcloud auth configure-docker us-central1-docker.pkg.dev
 
             - name: Building and Pushing Image
               run: |
