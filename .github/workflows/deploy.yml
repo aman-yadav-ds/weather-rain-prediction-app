@@ -12,6 +12,7 @@ env:
     DEPLOYMENT_NAME: "weather-rain-prediction-app"
     REPOSITORY: "us-central1-docker.pkg.dev/weather-rain-prediction/weather-rain-repo"
     IMAGE: "us-central1-docker.pkg.dev/weather-rain-prediction/weather-rain-repo/weather-rain-prediction-app"
+    USE_GKE_GCLOUD_AUTH_PLUGIN: True
 
 jobs:
     build-and-deploy:
